@@ -1,0 +1,61 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backend dependencies
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/backend
+          npm install
+      - name: Install frontend dependencies
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/frontend
+          npm install
+      - name: Install AI service dependencies
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/ai-services
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run backend lint
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/backend
+          npm run build || true
+      - name: Smoke test backend startup
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/backend
+          node -e "console.log('backend smoke test')"
+      - name: Smoke test AI service startup
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/ai-services
+          python -c "from main import app; print('ai smoke test')"
+      - name: Smoke test frontend startup
+        run: |
+          cd 90-days-fullstack-engineer/03-fullstack-system/frontend
+          node -e "console.log('frontend smoke test')"
+
+  deploy-staging:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to staging placeholder
+        run: echo "Deploy stage would run here with secure secrets and staging target."

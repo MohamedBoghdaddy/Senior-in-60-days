@@ -1,0 +1,66 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: platform
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:7
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodata:/data/db
+
+  redis:
+    image: redis:7
+    ports:
+      - 6379:6379
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      - PORT=5000
+      - PG_CONNECTION=postgresql://user:password@postgres:5432/platform
+      - MONGO_URI=mongodb://mongo:27017/platform
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=localsecret
+      - REFRESH_SECRET=localrefresh
+      - BULLMQ_QUEUE_NAME=platform-jobs
+      - LOG_LEVEL=debug
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+      - mongo
+      - redis
+
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai
+    ports:
+      - 8000:8000
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  mongodata:

@@ -1,0 +1,18 @@
+{
+  "name": "platform-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.14.1",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
