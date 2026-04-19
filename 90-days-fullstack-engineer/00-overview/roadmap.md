@@ -1,86 +1,133 @@
 # 90-Day Engineering Roadmap
 
-## Phase 1: Foundation (Weeks 1-4)
+## What this is
 
-### Week 1: Structure and intent
-- Define the portfolio mission and senior engineering signal.
-- Build repo structure by capability instead of chronology.
-- Capture baseline strengths and gaps.
-- Deliver: `00-overview`, architecture scaffolding, root narrative.
+A phase-by-phase overview of 90 days of structured engineering growth.
+Each phase has a concrete goal, a measurable outcome, and a set of skills it builds.
 
-### Week 2: Core engineering evidence
-- Create problem-solving documentation for algorithms and SQL.
-- Build system-design templates with scale, APIs, and tradeoffs.
-- Deliver: `01-core-engineering` folder with tracker and templates.
+For the day-by-day execution detail, see:
+- [Phase 1 (Days 1–30)](phase-1-days-01-30.md)
+- [Phase 2 (Days 31–60)](phase-2-days-31-60.md)
+- [Phase 3 (Days 61–90)](phase-3-days-61-90.md)
 
-### Week 3: Backend engineering scaffolds
-- Build clean architecture Node.js boilerplate.
-- Add .NET Core Web API design example.
-- Document patterns and architecture decisions.
-- Deliver: `02-backend-engineering` with code samples.
+---
 
-### Week 4: System design and feature plan
-- Define the production-grade multi-service platform.
-- Build architecture, data flow, and tradeoff docs.
-- Deliver: backend/ frontend/ ai-services/ infra groundwork.
+## Phase 1: Engineering Foundation Upgrade (Days 1–30)
 
-## Phase 2: Real engineering (Weeks 5-8)
+**The problem this phase solves:** You can build things but you do not deeply understand what happens inside Node.js, why SQL queries are slow, or how to think about backend architecture at a production level.
 
-### Week 5: Backend execution
-- Implement main Node.js service skeleton with auth, RBAC, error handling.
-- Add Redis, Postgres, MongoDB models and queue patterns.
-- Deliver: `03-fullstack-system/backend` sample code.
+**What this phase builds:**
+- Node.js internals: event loop, async patterns, streams, clustering, worker threads, debugging
+- SQL and database depth: schema design, indexing, query optimization, transactions, window functions
+- LeetCode pattern fluency: arrays, two pointers, sliding window, hash maps, trees, graphs in Python
+- Backend architecture basics: REST design, validation, error handling, auth, repository pattern, logging
+- Daily discipline: the habit of committing evidence every single day
 
-### Week 6: AI service and integration
-- Build FastAPI AI microservice with safe output and retry logic.
-- Add feature flow from backend to AI insights.
-- Deliver: `03-fullstack-system/ai-services` and integration docs.
+**End-of-phase outcomes (you must produce these):**
+- 30 LeetCode problems solved in Python with pattern notes committed
+- A schema design doc for a real system you designed from scratch
+- A written critique/code review of the existing Node.js backend
+- 2 timed system design write-ups (rate limiter + one more)
+- All notes from Day 1 to Day 30 filled in, not empty
 
-### Week 7: Frontend experience
-- Build React shell with dashboard, listing, detail, and AI insight pages.
-- Connect UI, backend API, and authenticated flows.
-- Deliver: `03-fullstack-system/frontend` scaffold.
+**Resources mapped to this phase:**
+- Hussein Nasser YouTube: event loop, async, Node.js architecture videos (2–3 hours total)
+- NodeJS Complete Guide (Udemy): sections on event loop + async only (3–4 hours)
+- Intro to Databases (Coursera): Weeks 1–3 selectively (8–10 hours)
+- NeetCode YouTube: pattern intro videos before each LeetCode block (10–15 min each)
 
-### Week 8: Infrastructure and deployment
-- Add Dockerfiles, docker-compose, Kubernetes manifests.
-- Create CI/CD workflow and environment-driven deployment plan.
-- Deliver: `03-fullstack-system/infra`, `04-devops`, and GitHub Actions.
+---
 
-## Phase 3: Senior mode (Weeks 9-12)
+## Phase 2: Backend & Architecture Depth (Days 31–60)
 
-### Week 9: Production quality and observability
-- Add logging, error classification, retries, fallbacks, and monitoring planning.
-- Create incident reports and postmortem template.
-- Deliver: `05-production-thinking` and observability docs.
+**The problem this phase solves:** You have surface knowledge of .NET and you have never practiced system design under time pressure or written a real code review document.
 
-### Week 10: Decision rigor and communication
-- Convert system choices into ADRs and decision documents.
-- Write tradeoff narratives and architecture reasoning.
-- Deliver: `06-writing-thinking` with strong senior signals.
+**What this phase builds:**
+- .NET Clean Architecture: layers, DI, CQRS, repository pattern, FluentValidation, xUnit testing
+- System design under pressure: 6 timed 45-minute drills with written output
+- Code review thinking: reading code critically, writing structured review comments
+- LeetCode in C++: dynamic programming patterns, heap/priority queue patterns
+- Production Node.js: health checks, graceful shutdown, metrics, integration tests
 
-### Week 11: Showcase and outcomes
-- Capture demo narrative, system walkthrough, and interview stories.
-- Create a hiring-ready portfolio experience.
-- Deliver: `07-showcase` and polished README.
+**End-of-phase outcomes (you must produce these):**
+- A working .NET API built with clean architecture principles (committed)
+- 6 system design write-ups in the repo (timed, completed under pressure)
+- A formal written code review of the existing Node.js backend
+- 10+ LeetCode solutions in C++ with notes
+- A production readiness doc for the Node.js backend
+- All notes from Day 31 to Day 60 filled in
 
-### Week 12: Review, polish, and launch
-- Review architecture, validate docs, and ensure consistency.
-- Run end-to-end checks on folder structure and sample code.
-- Deliver: final repo ready for senior hiring review.
+**Resources mapped to this phase:**
+- ASP.NET Core SOLID and Clean Architecture (Udemy): weeks 5–6 (15–20 hours, go deep)
+- NeetCode YouTube: DP and heap pattern videos (before C++ LeetCode sessions)
+- Hussein Nasser: system design framework video + selected architecture talks
+- Software Design & Architecture Specialization (Coursera): Clean Architecture course selectively (5–8 hours)
 
-## Progress Tracker
+---
 
-| Week | Focus | Deliverable | Status |
-|------|-------|-------------|--------|
-| 1 | Portfolio structure | Overview docs | [x] |
-| 2 | Core engineering | Algorithms + SQL + design templates | [x] |
-| 3 | Backend scaffolds | Node and .NET examples | [x] |
-| 4 | System definition | Architecture and data flow | [x] |
-| 5 | Backend execution | API skeleton + data layer | [ ] |
-| 6 | AI integration | FastAPI microservice | [ ] |
-| 7 | Frontend experience | React system shell | [ ] |
-| 8 | Infrastructure | Docker + Kubernetes + CI/CD | [ ] |
-| 9 | Production maturity | Incidents + monitoring | [ ] |
-| 10 | Decision docs | ADRs + tradeoffs | [ ] |
-| 11 | Showcase | Demo + walkthrough + stories | [ ] |
-| 12 | Polish | Review and launch | [ ] |
+## Phase 3: Production & Scalability Mode (Days 61–90)
+
+**The problem this phase solves:** You have not containerized and orchestrated a real multi-service system, you have not set up proper observability, and you cannot articulate system design answers at a senior level.
+
+**What this phase builds:**
+- Docker: multi-stage builds, networking, compose production patterns, container security
+- Kubernetes: pods, services, deployments, HPA, ConfigMaps, Secrets, Ingress, debugging
+- Observability: structured logging, metrics with Prometheus, distributed tracing concepts, CI/CD pipelines
+- Incident response: runbooks, postmortems, failure simulation
+- Scaling patterns: caching layers, read replicas, async jobs, database scaling
+- Senior communication: design proposals, architecture reviews, interview articulation
+
+**End-of-phase outcomes (you must produce these):**
+- Improved Dockerfiles and docker-compose with health checks, secrets, resource limits (committed)
+- All K8s manifests updated with ConfigMaps/Secrets, HPA, liveness/readiness probes (committed)
+- A GitHub Actions CI/CD pipeline that actually runs lint + test + build (committed)
+- A structured logging + metrics setup in the backend (committed)
+- 3 incident runbooks + 1 detailed postmortem (committed)
+- A final system design write-up (45 min, timed)
+- A "what I built and why it matters" portfolio narrative
+- All notes from Day 61 to Day 90 filled in
+
+**Resources mapped to this phase:**
+- Docker & Kubernetes Practical Guide (Udemy): weeks 9–10 (25–30 hours, primary resource)
+- TechWorld with Nana YouTube: K8s concepts, Prometheus/Grafana setup
+- Hussein Nasser YouTube: observability and scaling deep dives
+- freeCodeCamp YouTube: SQL/PostgreSQL refresher only if needed (not primary)
+
+---
+
+## Progress tracker
+
+| Phase | Days | Status | Phase outcome artifact |
+|-------|------|--------|----------------------|
+| Phase 1: Foundation | 1–30 | [ ] | LeetCode tracker, schema doc, Node.js code review |
+| Phase 2: Architecture | 31–60 | [ ] | .NET project, 6 system designs, C++ LeetCode |
+| Phase 3: Production | 61–90 | [ ] | Docker/K8s improvements, CI/CD, observability, postmortem |
+
+---
+
+## Weekly checkpoints
+
+Every 7 days, complete a [weekly review](../../tracking/weekly-review-template.md).
+
+Every 30 days, update the [progress tracker](../../tracking/progress-tracker.md) with phase-level outcomes.
+
+---
+
+## Time realism
+
+Assumes 2–4 focused hours on most weekdays, more on weekends.
+
+| Resource | Mode | Phase | Hours |
+|----------|------|-------|-------|
+| Hussein Nasser YouTube | Selective (specific videos) | All | ~2h/week |
+| NodeJS Complete Guide | Partial (event loop, async, REST sections) | 1 | ~20–25h total |
+| Intro to Databases (Coursera) | Partial (skip what you know) | 1 | ~10h total |
+| ASP.NET Core Clean Architecture | Full | 2 | ~20h total |
+| Docker & Kubernetes Practical Guide | Full | 3 | ~30h total |
+| NeetCode | Video per pattern before practice | All | ~15min/session |
+| Software Design & Architecture | 1 course only (Clean Arch) | 2 | ~8h total |
+
+Total estimated course time: ~90–100 hours over 90 days = ~1h/day average.
+The remaining ~1–3 hours/day goes to building, coding, writing.
+
+Do not spend more than 50% of any day watching videos.
